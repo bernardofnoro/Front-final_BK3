@@ -8,20 +8,19 @@ const Cadastro = (props) => {
   const handleSubmit = async (evento) => {
     evento.preventDefault();
     // pego o valor que usuario digitou nos inputs
-    const titulo = evento.target.titulo.value; 
-    const salario = evento.target.salario.value;
-    const descricao = evento.target.descricao.value;
-    const senioridade = evento.target.senioridade.value;
+    const nome = evento.target.nome.value; 
+    const lancamento = evento.target.lancamento.value;
+    const imgurl = evento.target.imgurl.value;
+    const genero = evento.target.genero.value;
+    const plataforma = evento.target.plataforma.value;
+    const desenvolvedores = evento.target.desenvolvedores.value;
 
-    const vaga = {
-      titulo,
-      salario: parseInt(salario),
-      descricao,
-      senioridade
+    const jogo = {
+     nome,lancamento,imgurl,genero,plataforma,desenvolvedores
     }
     
     try {
-      const response = await Api.fetchPost(vaga)
+      const response = await Api.fetchPost(jogo)
       const result = await response.json();
       alert(result.message);
       history.push('/'); // forca o historico a voltar para a rota de / => home
@@ -37,7 +36,7 @@ const Cadastro = (props) => {
         <div className="card-title">
           <div className="row">
             <div className="col">
-              <h3>Cadastro de Vagas</h3>
+              <h3>Cadastro de Jogos</h3>
             </div>
           </div>
         </div>
@@ -46,32 +45,42 @@ const Cadastro = (props) => {
             <div className="row">
               <div className="col">
                 <div className="form-floating mb-3">
-                  <input type="text" className="form-control" name="titulo" id="floatingInput" placeholder="Digite o Titulo"/>
-                  <label htmlFor="floatingInput">Titulo</label>
+                  <input type="text" className="form-control" name="nome" id="floatingInput" placeholder="Nome do Jogo"/>
+                  <label htmlFor="floatingInput">Nome</label>
                 </div>
               </div>
               <div className="col">
                 <div className="form-floating">
-                  <input type="text" className="form-control" name="salario" id="floatingsalario" placeholder="Digite o Salario"/>
-                  <label htmlFor="floatingsalario">Salario</label>
+                  <input type="text" className="form-control" name="lancamento" id="floatingsalario" placeholder="Ano de lancamento"/>
+                  <label htmlFor="floatingsalario">Ano de Lançamento</label>
                 </div>
               </div>
             </div>
             <div className="row">
               <div className="col">
                 <div className="form-floating mb-3">
-                  <input type="text" className="form-control" name="descricao" id="floatingInput" placeholder="Digite a Descricao"/>
-                  <label htmlFor="floatingInput">Descricao</label>
+                  <input type="text" className="form-control" name="imgurl" id="floatingInput" placeholder="URL da imagem"/>
+                  <label htmlFor="floatingInput">Imagem URL</label>
                 </div>
               </div>
               <div className="col">
                 <div className="form-floating">
-                  <select className="form-control" name="senioridade" id="floatingsenioridade" placeholder="Digite a Senioridade">
-                    <option value="junior">Junior</option>
-                    <option value="pleno">Pleno</option>
-                    <option value="pleno">Senior</option>
-                  </select>
-                  <label htmlFor="floatingsenioridade">Senioridade</label>
+                  <input type="text" className="form-control" name="genero" id="floatingsalario" placeholder="Genero do Jogo"/>
+                  <label htmlFor="floatingsalario">Genero</label>
+                </div>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col">
+                <div className="form-floating mb-3">
+                  <input type="text" className="form-control" name="plataforma" id="floatingInput" placeholder="Plataformas"/>
+                  <label htmlFor="floatingInput">Plataformas</label>
+                </div>
+              </div>
+              <div className="col">
+                <div className="form-floating">
+                  <input type="text" className="form-control" name="desenvolvedores" id="floatingsalario" placeholder="Desenvolvedores"/>
+                  <label htmlFor="floatingsalario">Desenvolvedores</label>
                 </div>
               </div>
             </div>

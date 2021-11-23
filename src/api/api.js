@@ -1,23 +1,23 @@
 const Api = {
-  apiUrl: 'http://localhost:3001/vagas',
-  fetchGetAll: () => fetch(Api.apiUrl),
-  fetchGetById: id => fetch(`${Api.apiUrl}/${id}`),
-  fetchPost: (vaga) => {
+  apiUrl: 'https://api-front-back.herokuapp.com/rpg',
+  fetchGetAll: () => fetch(`${Api.apiUrl}/listall`),
+  fetchGetById: id => fetch(`${Api.apiUrl}/listid/${id}`),
+  fetchPost: (jogo) => {
     return fetch(`${Api.apiUrl}/add`, {
       method: 'POST',
       headers: new Headers({
         "Content-Type": "application/json",
       }),
-      body: JSON.stringify(vaga)
+      body: JSON.stringify(jogo)
     })
   },
-  fetchPut: (vaga, id) => {
+  fetchPut: (jogo, id) => {
     return fetch(`${Api.apiUrl}/update/${id}`, {
       method: 'PUT',
       headers: new Headers({
         "Content-Type": "application/json",
       }),
-      body: JSON.stringify(vaga)
+      body: JSON.stringify(jogo)
     })
   },
   fetchDelete: (id) => {

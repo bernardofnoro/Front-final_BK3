@@ -7,7 +7,7 @@ import { Modal } from 'react-responsive-modal';
 
 const VagaView = (props) => {
   const _id = props.match.params.id;
-  const [vaga, setVaga] = useState({});
+  const [jogo, setVaga] = useState({});
   const [open, setOpen] = useState(false);
 
   const onOpenModal = () => setOpen(true);
@@ -36,12 +36,14 @@ const VagaView = (props) => {
     <div className="container flex-grow-1">
       <div className="row">
         <div className="col">
-          <h1 className="text-center mt-4">{vaga.titulo}</h1>
-          <h2 className="text-center">{vaga.descricao}</h2>
-          <h4 className="text-center">{vaga.salario}</h4>
-          <h5 className="text-center">{vaga.senioridade}</h5>
+          <h1 className="text-center mt-4">{jogo.nome}</h1>
+          <h2 className="text-center">{jogo.lancamento}</h2>
+          <img className="text-center" src={jogo.imgurl} width="500" height="auto"></img>
+          <h5 className="text-center">{jogo.genero}</h5>
+          <h5 className="text-center">{jogo.desenvolvedores}</h5>
+          <h5 className="text-center">{jogo.plataforma}</h5>
           <div className="btn-group mt-3 w-100 d-flex align-items-center justify-content-center">
-            <Link to={`/update/${vaga._id}`}  className="btn btn-outline-info">Editar</Link>
+            <Link to={`/edit/${jogo._id}`}  className="btn btn-outline-info">Editar</Link>
             <button className="btn btn-outline-danger" onClick={onOpenModal}>Excluir</button>
           </div>
         </div>

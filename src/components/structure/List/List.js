@@ -18,8 +18,8 @@ const List = () => {
   return (
     <div className="row row-cols-1 row-cols-md-3 g-4 mt-3">
       {
-        vagas.map((vaga, index) => ( // iterar o array de vagas e para cada vaga chamar um componente card
-          <Card data={vaga} key={index}/>
+        vagas.map((jogo, index) => ( // iterar o array de vagas e para cada vaga chamar um componente card
+          <Card data={jogo} key={index}/>
         ))
       }
     </div>

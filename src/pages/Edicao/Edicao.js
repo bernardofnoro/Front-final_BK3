@@ -52,7 +52,7 @@ const Edicao = (props) => {
         <div className="card-title">
           <div className="row">
             <div className="col">
-              <h3>Edicao da Vagaa</h3>
+              <h3>Edição de Jogo</h3>
             </div>
           </div>
         </div>
@@ -63,28 +63,28 @@ const Edicao = (props) => {
                 <div className="form-floating mb-3">
                   <input
                     type="text"
-                    value={vaga.titulo}
+                    value={vaga.nome}
                     className="form-control"
-                    name="titulo"
+                    name="nome"
                     id="floatingInput"
-                    placeholder="Digite o Titulo"
+                    placeholder="Nome do Jogo"
                     onChange={handleFieldsChange}
                   />
-                  <label htmlFor="floatingInput">Titulo</label>
+                  <label htmlFor="floatingInput">Nome</label>
                 </div>
               </div>
               <div className="col">
                 <div className="form-floating">
                   <input
                     type="text"
-                    value={vaga.salario}
+                    value={vaga.lancamento}
                     className="form-control"
-                    name="salario"
+                    name="lancamento"
                     id="floatingsalario"
-                    placeholder="Digite o Salario"
+                    placeholder="Ano de lançamento"
                     onChange={handleFieldsChange}
                   />
-                  <label htmlFor="floatingsalario">Salario</label>
+                  <label htmlFor="floatingsalario">Lançamento</label>
                 </div>
               </div>
             </div>
@@ -93,30 +93,62 @@ const Edicao = (props) => {
                 <div className="form-floating mb-3">
                   <input
                     type="text"
-                    value={vaga.descricao}
+                    value={vaga.imgurl}
                     className="form-control"
-                    name="descricao"
+                    name="imgurl"
                     id="floatingInput"
-                    placeholder="Digite a Descricao"
+                    placeholder="URL da imagem"
                     onChange={handleFieldsChange}
                   />
-                  <label htmlFor="floatingInput">Descricao</label>
+                  <label htmlFor="floatingInput">Imagem</label>
                 </div>
               </div>
+            </div>
+            <div className="row">
               <div className="col">
-                <div className="form-floating">
-                  <select value={vaga.senioridade}
+                <div className="form-floating mb-3">
+                  <input
+                    type="text"
+                    value={vaga.genero}
                     className="form-control"
-                    name="senioridade"
-                    id="floatingsenioridade"
-                    value={vaga.senioridade}
+                    name="genero"
+                    id="floatingInput"
+                    placeholder="Genero do Jogo"
                     onChange={handleFieldsChange}
-                    >
-                    <option value="junior">Junior</option>
-                    <option value="pleno">pleno</option>
-                    <option value="senior">senior</option>
-                  </select>
-                  <label htmlFor="floatingsenioridade">Senioridade</label>
+                  />
+                  <label htmlFor="floatingInput">Genero</label>
+                </div>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col">
+                <div className="form-floating mb-3">
+                  <input
+                    type="text"
+                    value={vaga.plataforma}
+                    className="form-control"
+                    name="plataforma"
+                    id="floatingInput"
+                    placeholder="Plataformas"
+                    onChange={handleFieldsChange}
+                  />
+                  <label htmlFor="floatingInput">Plataformas</label>
+                </div>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col">
+                <div className="form-floating mb-3">
+                  <input
+                    type="text"
+                    value={vaga.desenvolvedores}
+                    className="form-control"
+                    name="desenvolvedores"
+                    id="floatingInput"
+                    placeholder="Desenvolvedores"
+                    onChange={handleFieldsChange}
+                  />
+                  <label htmlFor="floatingInput">Desenvolvedores</label>
                 </div>
               </div>
             </div>
