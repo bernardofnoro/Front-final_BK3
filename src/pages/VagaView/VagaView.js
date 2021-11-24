@@ -38,7 +38,7 @@ const VagaView = (props) => {
         <div className="col">
           <h1 className="text-center mt-4">{jogo.nome}</h1>
           <h2 className="text-center">{jogo.lancamento}</h2>
-          <img className="text-center" src={jogo.imgurl} width="500" height="auto"></img>
+          <img className="text-center" src={jogo.imgurl} width="500" height="auto" alt ={jogo.nome}></img>
           <h5 className="text-center">{jogo.genero}</h5>
           <h5 className="text-center">{jogo.desenvolvedores}</h5>
           <h5 className="text-center">{jogo.plataforma}</h5>
